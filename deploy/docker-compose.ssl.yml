@@ -1,0 +1,30 @@
+# Варіант Б: сервер без власного проксі. Caddy сам отримує й оновлює SSL (Let's Encrypt)
+# і розводить запити: /quiz/* → застосунок квізу, все інше → сайт.
+# Запуск з кореня проєкту:  docker compose -f deploy/docker-compose.ssl.yml up -d --build
+services:
+  site:
+    build: ..
+    image: erabandcamp-site:latest
+    container_name: erabandcamp-site
+    restart: unless-stopped
+    expose: ["80"]
+
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: erabandcamp-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # щоб дістатися до квізу, який працює на хості
+    depends_on: [site]
+
+volumes:
+  caddy_data:
+  caddy_config:

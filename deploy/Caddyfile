@@ -1,0 +1,25 @@
+# Варіант Б (власний SSL). Замініть QUIZ_UPSTREAM на реальну адресу застосунку квізу.
+# TODO: адреса квізу на сервері (ім'я контейнера:порт або host.docker.internal:порт)
+
+www.erabandcamp.ch {
+	redir https://erabandcamp.ch{uri} permanent
+}
+
+erabandcamp.ch {
+	encode zstd gzip
+
+	# Квіз — окремий застосунок, працює як і раніше
+	@quiz path /quiz /quiz/*
+	handle @quiz {
+		reverse_proxy host.docker.internal:8081   # ← QUIZ_UPSTREAM
+	}
+	# Якщо квіз — це сторінка старого WordPress, йому також потрібні його файли:
+	# handle /wp-content/* { reverse_proxy host.docker.internal:8081 }
+	# handle /wp-includes/* { reverse_proxy host.docker.internal:8081 }
+	# handle /wp-json/* { reverse_proxy host.docker.internal:8081 }
+	# handle /wp-admin/admin-ajax.php { reverse_proxy host.docker.internal:8081 }
+
+	handle {
+		reverse_proxy site:80
+	}
+}

@@ -1,0 +1,17 @@
+# Варіант А: сайт за вже наявним reverse proxy на сервері.
+# Контейнер слухає тільки localhost:8088 — проксі веде туди все, КРІМ /quiz/.
+services:
+  site:
+    build: .
+    image: erabandcamp-site:latest
+    container_name: erabandcamp-site
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:80"
+    # Якщо ваш проксі — контейнер (Traefik, nginx-proxy тощо) у спільній docker-мережі,
+    # приберіть "ports" і підключіть мережу проксі:
+    # networks: [proxy]
+
+# networks:
+#   proxy:
+#     external: true

@@ -1,0 +1,13 @@
+﻿{
+    "name":  "erabandcamp-site",
+    "version":  "1.0.0",
+    "private":  true,
+    "type":  "module",
+    "scripts":  {
+                    "images":  "node scripts/build-images.mjs",
+                    "emoji":  "node scripts/build-emoji.mjs"
+                },
+    "devDependencies":  {
+                            "sharp":  "^0.34.5"
+                        }
+}

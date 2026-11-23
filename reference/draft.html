@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://erabandcamp.ch/">
+<title>ERA BAND CAMP Швейцарія</title>
+<meta name="description" content="Зимовий табір для підлітків 10–18 років у Швейцарських Альпах, Saas-Grund, 18–31 грудня 2026. Лижі та сноуборд з інструкторами, Різдво разом, супровід менторів і психолога. Виїзд зі Львова.">
+<meta property="og:title" content="Різдво в Альпах з ERA BAND CAMP">
+<meta property="og:description" content="Saas-Grund, Швейцарія · 18–31 грудня 2026 · 10–18 років · виїзд зі Львова">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<!-- АНАЛІТИКА: сюди вставити GA4 (gtag.js) і Meta Pixel перед запуском -->
+<style>
+/* Layout: електрично-синій перший екран → білі «снігові» секції → синій блок безпеки → ціна → FAQ → синій фінал. Один стовпчик до 1100px. */
+:root{
+  --blue:#0000FE;      /* фірмовий синій */
+  --blue-deep:#0000B8;
+  --pink:#FF30EE;      /* фірмовий рожевий */
+  --lime:#CBF908;      /* фірмовий лайм */
+  --mint:#70FF89;      /* фірмовий м'ятний */
+  --ink:#0B0B2E;       /* текст, синюватий чорний */
+  --snow:#F3F4FF;      /* фон секцій, сніг з відтінком синього */
+  --paper:#FFFFFF;
+  --muted:#55587A;
+  --line:#DCDEF5;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:22px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4.6vw,48px);font-weight:800}
+h3{font-size:19px;font-weight:700;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(64px,9vw,112px)}
+.eyebrow{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch}
+.sec-head{display:grid;gap:16px;margin-bottom:44px;max-width:760px}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:700;font-size:15px;text-decoration:none;border-radius:999px;padding:17px 28px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-blue{background:var(--blue);color:#fff}
+
+/* фото з запасним варіантом */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#C9CCFF,#E9EAFF);border-radius:var(--r);max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg img{display:none}
+.ph.noimg::after{content:"Фото: " attr(data-label);position:absolute;inset:auto 14px 14px 14px;font-size:13px;font-weight:600;color:var(--blue-deep);background:rgba(255,255,255,.85);padding:8px 12px;border-radius:12px}
+
+/* шапка */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--blue)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--blue);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;text-decoration:none;font-family:var(--display);font-weight:800;font-size:13px;line-height:.95;letter-spacing:.02em;text-transform:uppercase}
+.logo img{height:40px;width:auto}
+.bar-r{display:flex;align-items:center;gap:18px}
+.tel{font-weight:700;text-decoration:none;white-space:nowrap}
+.bar .btn{padding:11px 20px;font-size:13px}
+@media (max-width:620px){.tel{display:none}}
+
+/* перший екран */
+.hero{background:var(--blue);color:#fff;padding-block:clamp(36px,6vw,72px) clamp(56px,8vw,96px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-copy{display:grid;gap:24px;min-width:0}
+.hero .eyebrow{color:var(--lime)}
+.hero h1{font-size:clamp(40px,6.6vw,82px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero .lead{color:#D9DBFF}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;white-space:nowrap}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.price-tag{font-size:15px;color:#D9DBFF}
+.price-tag b{font-family:var(--display);font-size:22px;color:#fff}
+.hero-visual{position:relative;min-width:0}
+.hero-visual .ph{aspect-ratio:4/5;border-radius:32px}
+.sticker{position:absolute;left:-18px;bottom:28px;background:var(--lime);color:var(--ink);font-family:var(--display);font-weight:800;font-size:15px;line-height:1.15;padding:16px 18px;border-radius:18px;transform:rotate(-5deg);box-shadow:0 10px 30px rgba(0,0,60,.3)}
+.sticker small{display:block;font-family:var(--body);font-weight:600;font-size:12px}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-visual .ph{aspect-ratio:4/3}.sticker{left:12px}}
+
+/* біжучий рядок */
+.ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap;font-family:var(--display);font-weight:800;font-size:clamp(18px,2.4vw,26px);padding-block:14px}
+.ticker-in{display:inline-flex;gap:28px;animation:run 26s linear infinite}
+.ticker span::after{content:"✳";margin-left:28px;color:var(--pink)}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* довіра */
+.trust{background:var(--snow);padding-block:56px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat b{display:block;font-family:var(--display);font-size:clamp(34px,4.4vw,52px);font-weight:800;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:10px;color:var(--muted);font-size:15px;line-height:1.4}
+.press{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.press a{font-family:var(--display);font-weight:700;color:var(--ink);text-decoration:none;font-size:15px}
+.press a:hover{color:var(--blue)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr);gap:28px 16px}}
+
+/* враження */
+.moments{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.m{background:var(--snow);border-radius:var(--r);overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0}
+.m .ph{border-radius:0;aspect-ratio:4/3}
+.m-body{padding:20px 22px 24px;display:grid;gap:8px;align-content:start}
+.m-body p{color:var(--muted);font-size:15.5px}
+.m:nth-child(1),.m:nth-child(2){grid-column:span 3}
+.m:nth-child(n+3){grid-column:span 2}
+.m:nth-child(1) .ph{aspect-ratio:16/10}
+.m:nth-child(2) .ph{aspect-ratio:16/10}
+.tag{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--paper);color:var(--blue);padding:5px 10px;border-radius:999px}
+@media (max-width:900px){.moments{grid-template-columns:1fr 1fr}.m:nth-child(n){grid-column:span 1}.m:nth-child(1){grid-column:span 2}}
+@media (max-width:560px){.moments{grid-template-columns:1fr}.m:nth-child(n){grid-column:span 1}}
+
+/* маршрут */
+.route{margin-top:48px;display:grid;gap:14px}
+.route ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.route li{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.route li+li::before{content:"";width:22px;height:2px;background:var(--line)}
+.route .stop{border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--paper)}
+.route .main{background:var(--blue);border-color:var(--blue);color:#fff}
+.route small{color:var(--muted);font-size:14px}
+
+/* безпека */
+.safe{background:var(--blue);color:#fff;border-radius:40px;margin-inline:max(8px,env(safe-area-inset-left,0px))}
+.safe .eyebrow{color:var(--lime)}
+.safe .lead{color:#D9DBFF}
+.safe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.s{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.s .n{font-family:var(--display);font-weight:800;color:var(--lime);font-size:15px}
+.s p{color:#D9DBFF;font-size:15.5px}
+.first-time{margin-top:20px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:var(--pink);border-radius:var(--r);padding:24px 28px}
+.first-time h3{font-size:18px}
+.first-time p{font-size:15.5px}
+.first-time .ico{font-family:var(--display);font-weight:800;font-size:36px;line-height:1}
+@media (max-width:900px){.safe-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.safe-grid{grid-template-columns:1fr}.first-time{grid-template-columns:1fr}.safe{border-radius:28px}}
+
+/* дім */
+.home-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center}
+.home-grid .ph{aspect-ratio:5/4}
+.home-copy{display:grid;gap:22px;min-width:0}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks li{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
+.checks li::before{content:"";width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230B0B2E' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.altitude{font-family:var(--display);font-weight:800;color:var(--blue);font-size:15px}
+@media (max-width:860px){.home-grid{grid-template-columns:1fr}}
+
+/* команда */
+.team{background:var(--snow)}
+.team-photo{aspect-ratio:21/9;border-radius:32px}
+.team-cap{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-top:28px}
+.team-cap p{max-width:62ch;color:var(--muted)}
+.team-cap strong{color:var(--ink)}
+.partners{display:flex;gap:10px;flex-wrap:wrap}
+.partners span{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px}
+@media (max-width:760px){.team-photo{aspect-ratio:4/3}.team-cap{grid-template-columns:1fr}}
+
+/* ціна */
+.price-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:2px solid var(--ink);border-radius:32px;overflow:hidden}
+.price-l{background:var(--lime);padding:clamp(28px,4vw,48px);display:grid;gap:20px;align-content:space-between}
+.price-big{font-family:var(--display);font-weight:800;font-size:clamp(56px,8vw,96px);line-height:.9;font-variant-numeric:tabular-nums}
+.price-big small{font-size:.32em;font-weight:700;margin-left:6px}
+.price-l p{font-weight:600}
+.price-r{padding:clamp(28px,4vw,48px);display:grid;gap:18px;align-content:start}
+.price-r .checks{grid-template-columns:1fr 1fr;gap:12px 24px}
+.pay-note{font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+@media (max-width:860px){.price-card{grid-template-columns:1fr}.price-r .checks{grid-template-columns:1fr}}
+
+/* відгуки */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{border:1.5px dashed var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start;min-width:0}
+.rv q{font-size:17px;font-weight:500;quotes:"«" "»"}
+.rv span{font-size:14px;color:var(--muted)}
+.ig{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;color:var(--muted);font-size:15px}
+@media (max-width:860px){.reviews{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{background:var(--snow)}
+.faq-list{display:grid;gap:10px;max-width:860px}
+details{background:var(--paper);border-radius:18px;padding:0 24px;border:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:22px;line-height:1;color:var(--blue);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding-bottom:22px;color:var(--muted);max-width:68ch}
+
+/* фінал */
+.final{background:var(--blue);color:#fff;text-align:left}
+.final-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.final h2 em{font-style:normal;color:var(--lime)}
+.final .lead{color:#D9DBFF;margin-top:18px}
+.steps{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;color:#E6E7FF}
+.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--lime);color:var(--ink);font-family:var(--display);font-weight:800;font-size:14px;display:grid;place-items:center}
+.contact-box{background:#fff;color:var(--ink);border-radius:28px;padding:28px;display:grid;gap:16px}
+.contact-box .btn{width:100%}
+.channels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.channels a{text-align:center;text-decoration:none;font-weight:700;font-size:14px;border:1.5px solid var(--line);border-radius:14px;padding:12px 6px}
+.channels a:hover{border-color:var(--blue);color:var(--blue)}
+.phone-line{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.phone-line b{font-family:var(--display);font-size:17px;color:var(--ink);user-select:all}
+.copy{font:inherit;font-weight:700;font-size:13px;background:var(--snow);border:0;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--blue)}
+@media (max-width:860px){.final-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#9EA1C7;font-size:14px;padding-block:28px calc(28px + 72px)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+
+/* мобільна панель */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;align-items:center;justify-content:space-between;gap:12px}
+.mbar b{font-family:var(--display);font-size:18px}
+.mbar small{display:block;color:var(--muted);font-size:12px}
+.mbar .btn{padding:13px 20px;font-size:14px}
+@media (max-width:760px){.mbar{display:flex}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="ERA BAND CAMP">
+      <img src="https://erabandcamp.ch/wp-content/uploads/2026/10/logo-crop.png" alt="ERA BAND CAMP" onerror="this.replaceWith(Object.assign(document.createElement('span'),{innerHTML:'ERA<br>BAND<br>CAMP'}))">
+    </a>
+    <div class="bar-r">
+      <a class="tel" href="tel:+380675033200">+380 67 503 32 00</a>
+      <a class="btn btn-lime js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Залишити заявку</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. ПЕРШИЙ ЕКРАН -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Швейцарія · Saas-Grund · 18–31 грудня 2026</p>
+      <h1>Різдво в Альпах. <em>Зі своїми людьми.</em></h1>
+      <p class="lead">Зимовий табір для підлітків: лижі та сноуборд з інструкторами, Різдво з кутею й колядками, нові друзі. Поруч ментори, психолог і медик.</p>
+      <div class="facts">
+        <span class="fact">14 днів</span>
+        <span class="fact">10–15 та 14–18 років</span>
+        <span class="fact">Виїзд зі Львова</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-lime js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Підібрати програму ↗</a>
+        <p class="price-tag"><b>2 900 €</b> &nbsp;усе включено</p>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ph" data-label="група ERA BAND на тлі Альп"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/more7.webp" alt="Учасники ERA BAND CAMP у Швейцарських Альпах" fetchpriority="high"></div>
+      <div class="sticker">Скіпас, прокат<br>і страховка вже в ціні<small>нічого не доплачуєте на місці</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-in">
+  <span>Лижі</span><span>Сноуборд</span><span>Різдво разом</span><span>Термальні басейни</span><span>Женева</span><span>Нові друзі</span>
+  <span>Лижі</span><span>Сноуборд</span><span>Різдво разом</span><span>Термальні басейни</span><span>Женева</span><span>Нові друзі</span>
+</div></div>
+
+<!-- 2. ДОВІРА -->
+<section class="trust" aria-label="ERA BAND CAMP у цифрах">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>970</b><span>підлітків уже їздили з нами</span></div>
+      <div class="stat"><b>23</b><span>зміни за 4 роки</span></div>
+      <div class="stat"><b>70%</b><span>дітей повертаються вдруге</span></div>
+      <div class="stat"><b>290</b><span>дітей стали на лижі або сноуборд</span></div>
+    </div>
+    <div class="press">
+      Про нас писали:
+      <a href="https://www.24heures.ch/des-orphelins-ukrainiens-domptent-leurs-traumatismes-au-cur-des-vignes-549648824728" target="_blank" rel="noopener">24 heures</a>
+      <a href="https://life.nv.ua/ukr/kids/reabilitaciya-ditey-pid-chas-viyni-programa-dopomogi-zarina-era-band-camp-v-alpah-shcho-vidomo-50288170.html" target="_blank" rel="noopener">НВ</a>
+      <a href="https://youtu.be/TuSktkzHY3U" target="_blank" rel="noopener">Радіо Свобода</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ВРАЖЕННЯ -->
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" style="color:var(--pink)">Що чекає на дитину</p>
+      <h2>Два тижні, які дитина розповідатиме весь рік</h2>
+    </div>
+    <div class="moments">
+      <article class="m">
+        <div class="ph" data-label="катання"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/more1.webp" alt="Діти катаються на лижах" loading="lazy"></div>
+        <div class="m-body"><span class="tag">5 днів на схилах</span><h3>Лижі та сноуборд з українськими інструкторами</h3><p>Групи за рівнем: від першого дня на лижах до впевненого катання. Новачки зазвичай їдуть самостійно вже на третій день.</p></div>
+      </article>
+      <article class="m">
+        <div class="ph" data-label="різдвяний вечір"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/photo1.webp" alt="Різдвяний вечір у таборі" loading="lazy"></div>
+        <div class="m-body"><span class="tag">24–25 грудня</span><h3>Різдво разом</h3><p>Готуємо кутю, ставимо вертеп, колядуємо. Свято серед гір у колі друзів.</p></div>
+      </article>
+      <article class="m">
+        <div class="ph" data-label="термальний комплекс"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/more2.webp" alt="День відновлення" loading="lazy"></div>
+        <div class="m-body"><h3>Термальні басейни</h3><p>День відпочинку після катання.</p></div>
+      </article>
+      <article class="m">
+        <div class="ph" data-label="Женева"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/photo12.webp" alt="Прогулянка Женевою" loading="lazy"></div>
+        <div class="m-body"><h3>Різдвяна Женева</h3><p>Прогулянка містом і ярмарки.</p></div>
+      </article>
+      <article class="m">
+        <div class="ph" data-label="конкурс талантів"><img src="https://erabandcamp.ch/wp-content/uploads/2026/10/more0.webp" alt="Вечірня програма" loading="lazy"></div>
+        <div class="m-body"><h3>Вечори, які не забуваються</h3><p>Конкурс талантів від ZARINA, майстерні, дискотеки.</p></div>
+      </article>
+    </div>
+    <div class="route">
+      <ol>
+        <li><span class="stop">Львів</span></li>
+        <li><span class="stop">Пльзень</span></li>
+        <li><span class="stop main">Saas-Grund · 7 ночей</span></li>
+        <li><span class="stop">Женева</span></li>
+        <li><span class="stop">Пльзень</span></li>
+        <li><span class="stop">Львів</span></li>
+      </ol>
+      <small>Весь шлях автобусом разом із командою. Учасникам із Києва допоможемо з дорогою до Львова.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 4. БЕЗПЕКА -->
+<section class="safe" id="safety">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Для батьків</p>
+      <h2>Ви знаєте, де дитина і як вона почувається. Кожен день.</h2>
+      <p class="lead">Ви довіряєте нам найдорожче. Ось як ми це бережемо.</p>
+    </div>
+    <div class="safe-grid">
+      <div class="s"><span class="n">24/7</span><h3>Ментори завжди поруч</h3><p>У дорозі, на схилі й у шале. Дитина ніколи не лишається без дорослого.</p></div>
+      <div class="s"><span class="n">Щодня</span><h3>Батьківський Telegram-чат</h3><p>Фото й відео з дня, відповіді на питання. Подзвонити можна будь-коли.</p></div>
+      <div class="s"><span class="n">У команді</span><h3>Психолог і медик</h3><p>Психолог допомагає з адаптацією, медик чергує в таборі весь час.</p></div>
+      <div class="s"><span class="n">У ціні</span><h3>Туристичне страхування</h3><p>Входить у повний пакет, разом зі скіпасом і прокатом спорядження.</p></div>
+      <div class="s"><span class="n">Договір</span><h3>Усе прописано письмово</h3><p>Права, обов'язки, відповідальність за життя й здоров'я. Гарантія повернення коштів.</p></div>
+      <div class="s"><span class="n">За рівнем</span><h3>Безпечне катання</h3><p>Інструктори, міні-групи за підготовкою, захисне спорядження.</p></div>
+    </div>
+    <div class="first-time">
+      <span class="ico">1st</span>
+      <div><h3>Дитина вперше їде без батьків?</h3><p>До поїздки можемо організувати онлайн-зустріч з нашим психологом. Дитина поставить свої питання і сама вирішить, що хоче їхати.</p></div>
+      <a class="btn btn-ghost js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Домовитися</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ДІМ -->
+<section id="stay">
+  <div class="wrap home-grid">
+    <div class="ph" data-label="шале Annabelle взимку"><img src="img/chalet-annabelle.jpg" alt="Шале Annabelle в Saas-Grund" loading="lazy"></div>
+    <div class="home-copy">
+      <p class="eyebrow" style="color:var(--pink)">Де житиме дитина</p>
+      <h2>Шале Annabelle в центрі Saas-Grund</h2>
+      <p class="altitude">1 560 м над рівнем моря</p>
+      <ul class="checks">
+        <li>Підйомник Kreuzboden–Hohsaas через дорогу: на схил пішки</li>
+        <li>Кімнати на 2–5 осіб, майже всі з балконом</li>
+        <li>Тільки наша група в будинку</li>
+        <li>Харчування тричі на день, особливий раціон обговорюємо заздалегідь</li>
+        <li>Лижна кімната з сушаркою для черевиків, зала для вечорів</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. КОМАНДА -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" style="color:var(--pink)">Хто буде поруч</p>
+      <h2>Команда, якій діти пишуть після табору</h2>
+    </div>
+    <div class="ph team-photo" data-label="спільне фото команди"><img src="https://erabandcamp.ch/wp-content/uploads/2026/11/ebc-2025-gal-alps-team-1024x683.jpg" alt="Команда ERA BAND CAMP" loading="lazy"></div>
+    <div class="team-cap">
+      <p><strong>Наталя Колодницька</strong>, засновниця табору, ювелірного дому ZARINA і бренду NATKINA. З нею ментори, психологи, медик та інструктори, які провели 23 зміни.</p>
+      <div class="partners" aria-label="Партнери"><span>ZARINA</span><span>NATKINA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ЦІНА -->
+<section id="price">
+  <div class="wrap">
+    <div class="price-card">
+      <div class="price-l">
+        <p class="eyebrow">Повний пакет · 14 днів</p>
+        <div class="price-big">2 900<small>€</small></div>
+        <p>Бронювання від 10% вартості, решту можна вносити частинами до виїзду.</p>
+        <a class="btn btn-blue js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Забронювати місце ↗</a>
+      </div>
+      <div class="price-r">
+        <h3>У вартість уже входить</h3>
+        <ul class="checks">
+          <li>Автобус Львів — Швейцарія — Львів</li>
+          <li>Проживання 10 ночей</li>
+          <li>Харчування</li>
+          <li>Скіпас на всі дні катання</li>
+          <li>Прокат лиж або сноуборду</li>
+          <li>Заняття з інструкторами</li>
+          <li>Туристичне страхування</li>
+          <li>Термальний комплекс і Женева</li>
+          <li>Різдвяна програма та майстерні</li>
+          <li>Фірмове худі ERA BAND</li>
+        </ul>
+        <p class="pay-note">Окремо лише кишенькові гроші на сувеніри та перекуси в дорозі.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ВІДГУКИ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" style="color:var(--pink)">Відгуки</p>
+      <h2>Що кажуть батьки після табору</h2>
+    </div>
+    <div class="reviews">
+      <figure class="rv" style="margin:0"><q>Тут буде реальний відгук батьків.</q><span>Ім'я, місто · дитина 13 років</span></figure>
+      <figure class="rv" style="margin:0"><q>Тут буде реальний відгук батьків.</q><span>Ім'я, місто · дитина 15 років</span></figure>
+      <figure class="rv" style="margin:0"><q>Тут буде відгук самого учасника.</q><span>Ім'я, 16 років</span></figure>
+    </div>
+    <div class="ig">Відео з минулих змін — в Instagram. Покажіть дитині: <a class="btn btn-pink" href="https://www.instagram.com/era.band.camp/" target="_blank" rel="noopener" style="padding:12px 20px;font-size:13px">@era.band.camp ↗</a></div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow" style="color:var(--pink)">Питання батьків</p><h2>Часті питання</h2></div>
+    <div class="faq-list">
+      <details><summary>Дитина ніколи не каталася. Це проблема?</summary><p>Ні. Багато дітей уперше стають на лижі саме в таборі. Групи формуємо за рівнем, інструктори пояснюють усе поетапно, кожен рухається у своєму темпі.</p></details>
+      <details><summary>Що буде, якщо дитина захворіє?</summary><p>У таборі постійно чергує медичний працівник. Страхування входить у пакет, тож за потреби дитина отримає допомогу в лікарні. Ви дізнаєтесь про все одразу.</p></details>
+      <details><summary>Як ми будемо на зв'язку з дитиною?</summary><p>Телефони не забираємо, лише просимо менше сидіти в них. Щодня в батьківському чаті фото й новини, а менеджеру можна подзвонити будь-коли.</p></details>
+      <details><summary>А якщо дитині не сподобається?</summary><p>Ментори й психолог допомагають адаптуватися з першого дня: ігри на знайомство, робота в командах. Якщо щось не так, ми одразу на зв'язку з вами й разом шукаємо рішення.</p></details>
+      <details><summary>Чи можна повернути гроші?</summary><p>Так. Можна перенести оплату на наступну зміну або повернути кошти за умовами договору. Договір надішлемо до оплати.</p></details>
+      <details><summary>Які документи потрібні для виїзду?</summary><p>Закордонний паспорт дитини та дозвіл на виїзд. Повний перелік і список речей менеджер надішле після бронювання.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. ФІНАЛ -->
+<section class="final" id="booking">
+  <div class="wrap final-grid">
+    <div>
+      <h2>Залиште заявку. <em>Решту розкажемо.</em></h2>
+      <p class="lead">Чотири коротких питання про дитину, і менеджер підбере програму за віком і рівнем катання.</p>
+      <ol class="steps">
+        <li>Ви відповідаєте на 4 питання (1 хвилина)</li>
+        <li>Менеджер зв'язується зручним для вас способом</li>
+        <li>Бронюєте місце від 10% вартості</li>
+      </ol>
+    </div>
+    <div class="contact-box">
+      <a class="btn btn-blue js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Підібрати програму ↗</a>
+      <p style="font-size:14px;color:var(--muted);text-align:center">або напишіть нам самі</p>
+      <div class="channels">
+        <a href="https://t.me/EraBandTravel" target="_blank" rel="noopener">Telegram</a>
+        <a href="viber://chat?number=%2B380675033200">Viber</a>
+        <a href="https://wa.me/380675033200" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="phone-line"><span>Телефон</span><b id="phone">+380 67 503 32 00</b><button class="copy" type="button" id="copyPhone">Копіювати</button></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 ERA BAND CAMP</span>
+    <span><a href="https://www.instagram.com/era.band.camp/" target="_blank" rel="noopener">Instagram</a> · <a href="https://erabandcamp.ch/privacy-policy/" target="_blank" rel="noopener">Політика конфіденційності</a></span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>2 900 €</b><small>18–31 грудня · усе включено</small></div>
+  <a class="btn btn-lime js-quiz" href="https://erabandcamp.ch/quiz/winter-switzerland/">Залишити заявку</a>
+</div>
+
+<script>
+// Фото: якщо файл не завантажився, показуємо підписану заглушку
+document.querySelectorAll('.ph img').forEach(function(img){
+  function fail(){img.parentElement.classList.add('noimg')}
+  if(img.complete && img.naturalWidth===0) fail();
+  img.addEventListener('error',fail);
+});
+// Передаємо UTM-мітки з реклами у квіз
+(function(){
+  var q=location.search; if(!q) return;
+  document.querySelectorAll('.js-quiz').forEach(function(a){a.href=a.href+(a.href.indexOf('?')>-1?'&':'?')+q.slice(1)});
+})();
+// Копіювання телефону
+document.getElementById('copyPhone').addEventListener('click',function(){
+  var b=this,t=document.getElementById('phone').textContent;
+  function ok(){b.textContent='Скопійовано'}
+  try{navigator.clipboard.writeText(t).then(ok,function(){sel()})}catch(e){sel()}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('phone'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+});
+</script>
+</body>
+</html>

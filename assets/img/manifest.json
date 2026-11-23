@@ -1,0 +1,434 @@
+{
+  "hero-slope": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 58
+    },
+    "1600": {
+      "width": 1178,
+      "height": 884,
+      "kb": 103
+    }
+  },
+  "p-snowx": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 49
+    },
+    "1600": {
+      "width": 1068,
+      "height": 801,
+      "kb": 67
+    }
+  },
+  "r-table": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 25
+    }
+  },
+  "r-attic": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 28
+    }
+  },
+  "r-two": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 16
+    }
+  },
+  "r-window": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 24
+    }
+  },
+  "r-group": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 32
+    }
+  },
+  "r-bath": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 15
+    }
+  },
+  "r-foosball": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 40
+    }
+  },
+  "r-pingpong": {
+    "600": {
+      "width": 600,
+      "height": 800,
+      "kb": 24
+    }
+  },
+  "p-board": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 45
+    },
+    "1600": {
+      "width": 1584,
+      "height": 1188,
+      "kb": 83
+    },
+    "sq": {
+      "kb": 71,
+      "focus": "50% 50%"
+    }
+  },
+  "p-toblerone": {
+    "800": {
+      "width": 771,
+      "height": 578,
+      "kb": 54
+    },
+    "1600": {
+      "width": 771,
+      "height": 578,
+      "kb": 50
+    },
+    "sq": {
+      "kb": 51,
+      "focus": "50% 59%"
+    }
+  },
+  "p-hood": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 33
+    },
+    "1600": {
+      "width": 1320,
+      "height": 990,
+      "kb": 53
+    }
+  },
+  "p-hood-sq": {
+    "800": {
+      "width": 800,
+      "height": 800,
+      "kb": 28
+    }
+  },
+  "p-gva-jet": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 116
+    },
+    "1600": {
+      "width": 1320,
+      "height": 990,
+      "kb": 195
+    },
+    "sq": {
+      "kb": 123,
+      "focus": "50% 50%"
+    }
+  },
+  "mentor-ski": {
+    "800": {
+      "width": 800,
+      "height": 800,
+      "kb": 68
+    },
+    "1600": {
+      "width": 1320,
+      "height": 1320,
+      "kb": 122
+    }
+  },
+  "f-lunch2": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 74
+    }
+  },
+  "f-breakfast2": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 40
+    }
+  },
+  "p-choco-bar": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 41
+    },
+    "1600": {
+      "width": 1320,
+      "height": 990,
+      "kb": 74
+    },
+    "sq": {
+      "kb": 51,
+      "focus": "50% 50%"
+    }
+  },
+  "p-xmas-party": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 94
+    },
+    "1600": {
+      "width": 1200,
+      "height": 900,
+      "kb": 147
+    },
+    "sq": {
+      "kb": 114,
+      "focus": "50% 50%"
+    }
+  },
+  "p-xmas-mtn": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 71
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 161
+    },
+    "sq": {
+      "kb": 80,
+      "focus": "50% 43%"
+    }
+  },
+  "p-pool": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 34
+    },
+    "1600": {
+      "width": 920,
+      "height": 690,
+      "kb": 38
+    },
+    "sq": {
+      "kb": 49,
+      "focus": "50% 50%"
+    }
+  },
+  "p-gva-market": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 69
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 169
+    },
+    "sq": {
+      "kb": 92,
+      "focus": "50% 50%"
+    }
+  },
+  "evening": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 47
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 101
+    },
+    "tall": {
+      "width": 800,
+      "height": 1000,
+      "kb": 80
+    }
+  },
+  "chalet": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 133
+    },
+    "1600": {
+      "width": 1448,
+      "height": 1086,
+      "kb": 341
+    }
+  },
+  "p-lindt-tickets": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 39
+    },
+    "1600": {
+      "width": 1500,
+      "height": 1125,
+      "kb": 84
+    },
+    "sq": {
+      "kb": 46,
+      "focus": "50% 50%"
+    }
+  },
+  "p-tubing": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 27
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 74
+    },
+    "sq": {
+      "kb": 67,
+      "focus": "50% 56%"
+    }
+  },
+  "p-hoodie": {
+    "800": {
+      "width": 800,
+      "height": 785,
+      "kb": 61
+    },
+    "1600": {
+      "width": 809,
+      "height": 794,
+      "kb": 60
+    }
+  },
+  "p-disco": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 63
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 153
+    },
+    "sq": {
+      "kb": 109,
+      "focus": "50% 55%"
+    }
+  },
+  "mentor1": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 46
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 91
+    }
+  },
+  "mentor2": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 39
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 90
+    }
+  },
+  "team": {
+    "800": {
+      "width": 800,
+      "height": 600,
+      "kb": 123
+    },
+    "1600": {
+      "width": 1600,
+      "height": 1200,
+      "kb": 312
+    }
+  },
+  "f-balcony": {
+    "640": {
+      "width": 640,
+      "height": 838,
+      "kb": 80
+    },
+    "920": {
+      "width": 920,
+      "height": 1204,
+      "kb": 142
+    }
+  },
+  "f-salmon": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 53
+    }
+  },
+  "f-finland": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 73
+    }
+  },
+  "f-cake": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 49
+    }
+  },
+  "f-fruit": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 40
+    }
+  },
+  "f-lunch": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 68
+    }
+  },
+  "f-orange": {
+    "640": {
+      "width": 640,
+      "height": 640,
+      "kb": 22
+    }
+  }
+}

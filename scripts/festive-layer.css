@@ -1,0 +1,120 @@
+/* Принцип: святково, але акуратно — орнаменти бренду рівні, однакового розміру, нічого не обрізано краєм,
+   без нахилів і обертання. Колір несуть орнаменти, а не фони карток. */
+
+/* Орнамент як маска: колір — background-color, форма — --o */
+.eyebrow::before,.ticker span::after,.stats li::after,.orn-row i,.countdown::before,.orn-divider i{
+  -webkit-mask:var(--o,var(--o-star)) center/contain no-repeat;mask:var(--o,var(--o-star)) center/contain no-repeat}
+
+/* ---- Гірлянда (div.garland у першому й фінальному екрані) ---- */
+.garland{position:absolute;left:0;right:0;top:0;height:28px;z-index:6;pointer-events:none;background:var(--garland) 50% 0/320px 28px repeat-x}
+.garland::after{content:"";position:absolute;inset:0;background:var(--glow-a) 50% 0/320px 28px repeat-x;animation:twinkle 2.4s steps(1) infinite}
+@keyframes twinkle{50%{background-image:var(--glow-b)}}
+@media (max-width:859px){.sticker{top:34px}}
+
+/* ---- Сині екрани: ледь помітний «святковий папір» з орнаментів ---- */
+.hero,.final{background:var(--o-pattern) 50% 0/280px 260px repeat,var(--blue)}
+.safe{background:var(--o-pattern) 50% 0/280px 260px repeat,var(--blue)}
+@media (max-width:859px){.hero-copy{background:var(--o-pattern) 50% 0/280px 260px repeat,var(--blue)}}
+
+/* ---- Світлі панелі («Цифри» + «Команда», FAQ, маршрут): той самий узор, блакитний і ледь помітний ---- */
+.trust,.team,.faq{background:var(--o-pattern-blue) 50% 0/280px 260px repeat,var(--snow)}
+.route{background:var(--o-pattern-blue) 0 0/280px 260px repeat,var(--snow)}
+
+/* ---- Надзаголовки: маленький орнамент перед текстом ---- */
+.eyebrow{display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";flex:none;width:15px;height:15px;background:currentColor}
+.eyebrow-pink::before{background:var(--blue)}
+.hero .eyebrow::before,.safe .eyebrow::before{--o:var(--o-burst)}
+:is(#stay,#food,#team,#price,#faq) .eyebrow::before{--o:var(--o-burst);background:var(--pink-ink)}
+@media (max-width:859px){.hero .eyebrow::before{display:none}}   /* на телефоні рядок дат і так довгий */
+
+/* ---- Біжучий рядок: орнаменти-розділювачі ---- */
+.ticker span{padding-right:0}
+.ticker span::after{content:"";display:inline-block;width:.72em;height:.72em;margin:0 .95em;vertical-align:-.02em;background:var(--blue)}
+.ticker span:nth-child(4n+2)::after{--o:var(--o-flower);background:var(--pink-ink)}
+.ticker span:nth-child(4n+3)::after{--o:var(--o-leaf);background:var(--blue)}
+.ticker span:nth-child(4n)::after{--o:var(--o-burst);background:var(--pink-ink)}
+
+/* ---- Цифри: у кожній картці — свій орнамент у кутку ---- */
+.stats li{position:relative}
+.stats li::after{content:"";position:absolute;top:18px;right:18px;width:28px;height:28px;background:var(--pink)}
+.stats li:nth-child(2)::after{--o:var(--o-flower);background:var(--pink)}
+.stats li:nth-child(3)::after{--o:var(--o-leaf);background:var(--mint)}
+.stats li:nth-child(4)::after{--o:var(--o-burst);background:var(--lime)}
+.stats li:nth-child(1)::after{background:var(--blue)}
+@media (max-width:759px){.stats li::after{display:none}}   /* на телефоні картки вузькі — орнамент налазив би на цифру */
+
+/* ---- Ряд із чотирьох орнаментів бренду (над заголовком фіналу) ---- */
+.orn-row{display:flex;gap:12px;margin-bottom:22px}
+.orn-row i{display:block;width:26px;height:26px;background:#fff}
+.orn-row i:nth-child(2){--o:var(--o-leaf);background:var(--mint)}
+.orn-row i:nth-child(3){--o:var(--o-flower);background:var(--pink)}
+.orn-row i:nth-child(4){--o:var(--o-burst);background:var(--lime)}
+
+/* ---- Фінальний акцент: тонка смужка кольорів бренду над футером ---- */
+.footer{background:linear-gradient(90deg,var(--lime) 0 25%,var(--pink) 25% 50%,var(--mint) 50% 75%,#8E92FF 75%) top/100% 4px no-repeat,var(--ink)}
+
+/* ---- Перший екран: святкова листівка поверх неба (лише компʼютер) і зворотний відлік ---- */
+.hero-card{display:none}
+@media (min-width:860px){
+  .hero-card{display:block;position:absolute;top:-18px;right:-12px;z-index:2;width:40%;margin:0;padding:7px 7px 0;background:#fff;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,40,.35)}
+  .hero-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+  .hero-card figcaption{padding:7px 4px 9px;font-family:var(--display);font-weight:700;font-size:13px;line-height:1.2;color:var(--ink);text-align:center}
+}
+.countdown{display:inline-flex;align-items:center;gap:9px;margin:0;font-size:16px;color:var(--on-blue)}
+.countdown[hidden]{display:none}
+.countdown::before{content:"";flex:none;width:16px;height:16px;--o:var(--o-burst);background:var(--lime)}
+.countdown b{font-family:var(--display);font-weight:700;color:#fff;white-space:nowrap}
+
+/* ---- Фінал: фото різдвяного ярмарку, приглушене синім, і картка-запрошення ---- */
+.final{background:var(--o-pattern) 50% 0/280px 260px repeat,linear-gradient(rgba(0,0,254,.86),rgba(0,0,254,.86)),url(img/final-market-720.webp) 50% 50%/cover no-repeat,var(--blue)}
+@media (min-width:860px){
+  .final{background:var(--o-pattern) 50% 0/280px 260px repeat,linear-gradient(90deg,rgba(0,0,254,.78),rgba(0,0,254,.9) 45%,var(--blue) 70%),url(img/final-market-1280.webp) 0 50%/auto 100% no-repeat,var(--blue)}
+}
+.invite{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:end;
+  margin:calc(-1 * clamp(20px,3vw,32px)) calc(-1 * clamp(20px,3vw,32px)) 4px;padding:18px clamp(20px,3vw,32px) 18px;
+  background:var(--lime);color:var(--ink);border-radius:var(--r-lg) var(--r-lg) 0 0;border-bottom:2px dashed rgba(11,11,46,.3)}
+.invite::before,.invite::after{content:"";position:absolute;bottom:-13px;width:24px;height:24px;border-radius:50%;background:var(--blue)}
+.invite::before{left:-12px}.invite::after{right:-12px}
+.invite p{margin:0}
+.invite-kicker{grid-column:1;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(11,11,46,.65)}
+.invite-title{grid-column:1;margin-top:4px!important;font-family:var(--display);font-weight:800;font-size:clamp(18px,1.8vw,21px);line-height:1.15;text-wrap:balance}
+.invite-date{grid-column:2;grid-row:1 / span 2;text-align:right;font-size:13px;font-weight:700;line-height:1.1}
+.invite-date b{display:block;font-family:var(--display);font-weight:800;font-size:34px;line-height:.9;letter-spacing:-.03em}
+@media (min-width:1240px){.hero-card{right:-22px}}
+/* телефон: «ERA BAND CAMP · Winter 2026» — окремим рядком на всю ширину, назва й дати — під ним */
+@media (max-width:559px){.invite{row-gap:2px}.invite-kicker{grid-column:1 / -1;font-size:10px;white-space:nowrap}.invite-title{grid-row:2;font-size:17px}.invite-date{grid-row:2}.invite-date b{font-size:28px}}
+
+/* ---- «Шале» + «Кімнати» — одна світла панель, між ними лінія з орнаментів бренду ---- */
+#stay,#rooms{background:var(--o-pattern-blue) 50% 0/280px 260px repeat,var(--snow);margin-inline:max(8px,env(safe-area-inset-left,0px))}
+#stay{border-radius:var(--r-lg) var(--r-lg) 0 0;margin-top:12px;padding-bottom:clamp(40px,5vw,64px)}
+#rooms{border-radius:0 0 var(--r-lg) var(--r-lg)}
+@media (min-width:960px){#stay,#rooms{margin-inline:16px}}
+#stay .emo-list span{background:#fff}
+.orn-divider{display:flex;align-items:center;gap:12px;margin:0 0 clamp(36px,5vw,56px)}
+.orn-divider::before,.orn-divider::after{content:"";flex:1;height:1.5px;border-radius:2px;background:#CDD0F3}
+.orn-divider i{display:block;flex:none;width:22px;height:22px;background:var(--blue)}
+.orn-divider i:nth-child(2){--o:var(--o-leaf);background:var(--mint)}
+.orn-divider i:nth-child(3){--o:var(--o-flower);background:var(--pink)}
+.orn-divider i:nth-child(4){--o:var(--o-burst);background:var(--lime)}
+
+/* ---- Пакети: «Плюс усе з …» — що вже включено з молодшого пакета, замість порожнього місця під коротким списком ---- */
+.plan-body{display:grid;gap:16px;align-content:start}
+.plan-also{display:grid;gap:8px;align-content:start;padding:12px 14px 14px;border-radius:16px;background:var(--snow)}
+.plan-also p{margin:0;font-family:var(--display);font-weight:700;font-size:13px;line-height:1.25;color:var(--muted)}
+.plan-also ul{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.plan-also li{font-size:13px;font-weight:600;line-height:1.2;padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.plan-full .plan-also{background:rgba(11,11,46,.06)}
+.plan-full .plan-also p{color:#3B3F12}
+.plan-full .plan-also li{background:rgba(255,255,255,.7);border-color:transparent}
+
+/* ---- Ментори: м'яка однакова віньєтка — шість різних знімків читаються як одна серія ---- */
+.mentor{position:relative}
+.mentor::before{content:"";position:absolute;left:8px;right:8px;top:8px;aspect-ratio:1/1;border-radius:calc(var(--r) - 6px);pointer-events:none;
+  background:radial-gradient(120% 100% at 50% 38%,transparent 58%,rgba(11,11,46,.2));box-shadow:inset 0 0 0 1px rgba(11,11,46,.06)}
+
+/* ---- Картка худі: текст у ній високий, а фото світле — на компʼютері затемнення починається вище й щільніше,
+   щоб напис на худі не змішувався із заголовком (на телефоні текст під фото, тож це не потрібно) ---- */
+@media (min-width:561px){.st-hoodie::after{background:linear-gradient(180deg,rgba(11,11,46,0) 0,rgba(11,11,46,.25) 16%,rgba(11,11,46,.84) 40%,rgba(11,11,46,.95) 100%)}}
+
+@media (prefers-reduced-motion:reduce){.garland::after{display:none}}

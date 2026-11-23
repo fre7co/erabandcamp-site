@@ -1,0 +1,13 @@
+# Тимчасовий preview на Cloudflare Workers (статичні файли, без коду).
+# Збірка: node scripts/build-preview.mjs
+# Деплой: npx wrangler deploy -c deploy/cloudflare/wrangler.toml
+name = "erabandcamp-preview"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# Свій піддомен (зона a77.ch має бути в тому ж акаунті Cloudflare; DNS-запис створюється автоматично)
+routes = [{ pattern = "erabandcamp.a77.ch", custom_domain = true }]
+
+[assets]
+directory = "../../.preview"
+not_found_handling = "single-page-application"   # неіснуючі сторінки → головна
